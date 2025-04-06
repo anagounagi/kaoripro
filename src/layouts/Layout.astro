@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+
+/**
+ * Layout.astro - ページ全体のレイアウトを定義
+ * 
+ * 修正:
+ * - Google Fonts の最適化（CLS軽減）
+ * - OGP/Twitter画像のサイズ明示的指定
+ * - ViewTransitions lazy を削除
+ */
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title,
+  description = "Air Of Fragranceは、香りを通じて生活に新しい価値を創造する企業です。"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="https://kaori.aof-aroma.com/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGF4WVB7');</script>
+<!-- End Google Tag Manager -->
+
+
+    
+    <!-- 🌟 OGP（Open Graph Protocol）-->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kaori.aof-aroma.com/" />
+    <meta property="og:image" content="https://kyara.aof-aroma.com/ogp.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- 🐦 Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://kyara.aof-aroma.com/ogp.jpg" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+
+    <!-- 🎨 Google Fonts の最適化 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+    </noscript>
+
+    <!-- 🌟 CLS 防止（CSSでフォントを事前定義） -->
+    <style>
+      @font-face {
+        font-family: "Noto Sans JP";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/notosansjp/v53/F6zjtqlFJ7tDpgTtkzvft9w.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: "Noto Sans JP";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/notosansjp/v53/F6zjtqlFJ7tDpgTtkzvft9w.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: "Noto Sans JP";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/notosansjp/v53/F6zjtqlFJ7tDpgTtkzvft9w.woff2') format('woff2');
+      }
+    </style>
+  <!-- ★ ここに追加 -->
+  <link rel="preload" as="image" href="https://kaori.aof-aroma.com/images/PS166428.webp" />
+
+  </head>
+
+  <body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGF4WVB7"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>  
+    <slot />
+    
+  </body>
+</html>

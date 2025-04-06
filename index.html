@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://kaori.aof-aroma.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Critical CSS -->
+    <style>
+      /* クリティカルパスのCSS */
+      body {
+        margin: 0;
+        font-family: 'Noto Sans JP', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .header {
+        position: fixed;
+        width: 100%;
+        z-index: 50;
+        transition: all 0.3s;
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+    </style>
+    
+    <!-- 基本的なメタタグ -->
+    <title>Air Of Fragrance® × kyara workshop</title>
+    <meta name="description" content="Air Of Fragranceは、香りを通じて生活に新しい価値を創造する企業です。オリジナル香りデザイン開発、空間演出、調香教室など、香りに関する総合的なサービスを提供しています。" />
+    <meta name="keywords" content="香り,フレグランス,アロマ,調香,空間演出,ワークショップ" />
+    
+    <!-- OGP タグ -->
+    <meta property="og:title" content="Air Of Fragrance® × kyara workshop" />
+    <meta property="og:description" content="香りを通じて生活に新しい価値を創造する" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kaori.aof-aroma.com" />
+    <meta property="og:image" content="https://kaori.aof-aroma.com/ogp.jpg" />
+    <meta property="og:site_name" content="Air Of Fragrance" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Air Of Fragrance® × kyara workshop" />
+    <meta name="twitter:description" content="香りを通じて生活に新しい価値を創造する" />
+    <meta name="twitter:image" content="https://kaori.aof-aroma.com/ogp.jpg" />
+    
+    <!-- Preload fonts -->
+    <link 
+      rel="preload" 
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://kaori.aof-aroma.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="https://kaori.aof-aroma.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="https://kaori.aof-aroma.com/favicon.ico">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Air Of Fragrance",
+      "url": "https://kaori.aof-aroma.com",
+      "logo": "https://kaori.aof-aroma.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "042-670-7077",
+        "contactType": "customer service",
+        "areaServed": "JP"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "鹿島4-1-108",
+        "addressLocality": "八王子市",
+        "addressRegion": "東京都",
+        "postalCode": "192-0353",
+        "addressCountry": "JP"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx" defer></script>
+  </body>
+</html>

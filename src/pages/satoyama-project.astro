@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { ProjectHero } from '../components/satoyama/ProjectHero';
+import { ProjectBackground } from '../components/satoyama/ProjectBackground';
+import { ProjectOverview } from '../components/satoyama/ProjectOverview';
+import { ProjectActivities } from '../components/satoyama/ProjectActivities';
+import { ProjectGallery } from '../components/satoyama/ProjectGallery';
+import { ProjectImpact } from '../components/satoyama/ProjectImpact';
+import { ProjectConclusion } from '../components/satoyama/ProjectConclusion';
+
+---
+
+<Layout 
+  title="里山みかんプロジェクト | Air Of Fragrance"
+  description="耕作放棄地を再生し、持続可能な農業を実践。新たな付加価値の創成・地域の力で未来へつなぐプロジェクト。"
+>
+  <Header isDetailPage={true} client:load />
+  <main>
+    <ProjectHero />
+    <ProjectBackground />
+    <ProjectOverview />
+    <ProjectActivities />
+    <ProjectGallery client:visible />
+    <ProjectImpact />
+    <ProjectConclusion />
+  </main>
+  <Footer />
+</Layout>

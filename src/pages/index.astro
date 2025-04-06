@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Header } from '../components/Header';
+import { About } from '../components/About';
+import { News } from '../components/News';
+import { Services } from '../components/Services';
+import { Works } from '../components/Works';
+import { SpecialContent } from '../components/SpecialContent';
+import { Workflow } from '../components/Workflow';
+import { Message } from '../components/Message';
+import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
+import { ArtistGrid } from '../components/artists/ArtistGrid';
+---
+
+<Layout 
+  title="Air Of Fragrance® × kyara workshop"
+  description="Air Of Fragranceは、香りを通じて生活に新しい価値を創造する企業です。オリジナル香りデザイン開発、空間演出、調香教室など、香りに関する総合的なサービスを提供しています。"
+>
+  <Header client:load />
+  <main>
+    <About />
+    <News client:visible />
+    <Services />
+    <SpecialContent client:visible />
+    <Works client:visible />
+    <ArtistGrid />
+    <Workflow />
+    <Message />
+    <Contact client:visible />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import { ArtistGrid } from '../../components/artists/ArtistGrid';
+
+---
+
+<Layout 
+  title="フレグランスアーティスト | Air Of Fragrance"
+  description="Air Of Fragranceのフレグランスアーティストをご紹介します。香りの専門家たちによる、独創的な香りの世界をご覧ください。"
+>
+  <Header isDetailPage={true} client:load />
+  <main class="pt-32 pb-20">
+    <ArtistGrid />
+  </main>
+  <Footer />
+</Layout>

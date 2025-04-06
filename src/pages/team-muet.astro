@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { TeamMuetHero } from '../components/team-muet/Hero';
+import { TeamMuetAbout } from '../components/team-muet/About';
+import { TeamMuetFeatures } from '../components/team-muet/Features';
+import { TeamMuetSubscription } from '../components/team-muet/Subscription';
+import { TeamMuetTimeline } from '../components/team-muet/Timeline';
+import { TeamMuetSeasonReview } from '../components/team-muet/SeasonReview';
+
+---
+
+<Layout 
+  title="チームムエット | Air Of Fragrance"
+  description="チームムエットは、香りを通じて新しい価値を創造するコミュニティです。"
+>
+  <Header isDetailPage={true} client:load />
+  <main>
+    <TeamMuetHero />
+    <TeamMuetAbout />
+    <TeamMuetFeatures />
+    <TeamMuetSubscription />
+    <TeamMuetTimeline />
+    <TeamMuetSeasonReview />
+  </main>
+  <Footer />
+</Layout>
